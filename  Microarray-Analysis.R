@@ -7,6 +7,16 @@ if (!require("BiocManager", quietly = TRUE))
 
 BiocManager::install("affy")
 
+# Load the library Affy
 library(affy)
 
+# Sets working directory to a folder where .CEL files are 
 setwd("/Users/madisonstafford/Desktop")
+
+# Read the 4 .CEL files in R 
+data <-ReadAffy()
+
+# Generate boxplot to visualize dataset
+boxplot(data)
+
+# Normalize the dataset to remove any outliers and stable the median for all .CEL files
