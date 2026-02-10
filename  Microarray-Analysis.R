@@ -39,3 +39,10 @@ Controlaverage<-rowMeans(Control)
 
 #Apply fold change by substraction
 foldchange<-Treatmentaverage - Controlaverage
+
+#if genes fold change value if >2 its an up regulated gene, and if its <-2 its a down regulated gene and if genes are between -2 and +2 the are insignificant genes 
+
+#Export variable foldchange in a CSV file 
+write.csv(foldchange, "foldchange.csv")
+
+
